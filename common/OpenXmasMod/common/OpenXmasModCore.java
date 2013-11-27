@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
 import OpenXmasMod.common.item.ItemXmasRecord;
@@ -42,6 +43,19 @@ public class OpenXmasModCore {
 		Logger log = Logger.getLogger("OpenXmasMod");
 		log.setParent(FMLLog.getLogger());
 
+		BiomeGenBase.beach.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.ocean.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.plains.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.desert.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.extremeHills.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.forest.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
 	}
 
 	@EventHandler
