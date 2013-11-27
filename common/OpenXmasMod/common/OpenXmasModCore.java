@@ -2,6 +2,7 @@ package OpenXmasMod.common;
 
 import java.util.logging.Logger;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -17,6 +18,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = "OpenXmasMod ", name = "OpenXmasMod", version = OpenXmasModCore .VERSION + OpenXmasModCore .STATE)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = "OpenXmasMod", packetHandler = PacketHandler.class)
@@ -35,6 +37,9 @@ public class OpenXmasModCore {
 	public static OpenXmasMod.client.ClientProxy ClientProxy;
 
 	public static Item allIWantForXmasMusicDisk;
+	public static Item jingleBells;
+	
+	public static CreativeTabs musicTab = new ChristmasMusicTab(CreativeTabs.getNextID(), "openXmasMusic");
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -61,7 +66,15 @@ public class OpenXmasModCore {
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-		allIWantForXmasMusicDisk = new ItemXmasRecord(800, "openxmas:AllIWant");
+		allIWantForXmasMusicDisk = new ItemXmasRecord(800, "openxmas:AllIWant", "Mariah Carey", "All I Want For Christmas Is You")
+		.setUnlocalizedName("openxmas.allIWantDisk");
+		LanguageRegistry.addName(allIWantForXmasMusicDisk, "OpenXMas Disk");
+
+		jingleBells = new ItemXmasRecord(801, "openxmas:JingleBells", "Basshunter", "Jingle Bells")
+		.setUnlocalizedName("openxmas.jingleBellsDisk");
+		LanguageRegistry.addName(jingleBells, "OpenXMas Disk");
+		
+		LanguageRegistry.instance().addStringLocalization("itemGroup.openXmasMusic", "Open Xmas Music");
 	}
 
 

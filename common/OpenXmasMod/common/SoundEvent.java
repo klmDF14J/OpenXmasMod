@@ -9,5 +9,6 @@ public class SoundEvent
 	public void onSoundLoad(SoundLoadEvent e)
 	{
 		e.manager.soundPoolStreaming.addSound("openxmas:AllIWant.ogg");
+		e.manager.soundPoolStreaming.addSound("openxmas:JingleBells.ogg");
 	}
 }
