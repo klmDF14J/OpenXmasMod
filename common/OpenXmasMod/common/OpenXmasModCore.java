@@ -2,11 +2,11 @@ package OpenXmasMod.common;
 
 import java.util.logging.Logger;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
-import cpw.mods.fml.client.registry.ClientRegistry;
+import OpenXmasMod.common.item.ItemXmasRecord;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -16,8 +16,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = "OpenXmasMod ", name = "OpenXmasMod", version = OpenXmasModCore .VERSION + OpenXmasModCore .STATE)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = "OpenXmasMod", packetHandler = PacketHandler.class)
@@ -35,23 +33,23 @@ public class OpenXmasModCore {
 	public static CommonProxy CommonProxy;
 	public static OpenXmasMod.client.ClientProxy ClientProxy;
 
-
+	public static Item allIWantForXmasMusicDisk;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 
+		MinecraftForge.EVENT_BUS.register(new SoundEvent());
 		Logger log = Logger.getLogger("OpenXmasMod");
 		log.setParent(FMLLog.getLogger());
 
 	}
 
 	@EventHandler
-	public void init(FMLInitializationEvent event) {
-
-		
+	public void init(FMLInitializationEvent event)
+	{
+		allIWantForXmasMusicDisk = new ItemXmasRecord(800, "openxmas:AllIWant");
 	}
 
-	
 
 	@ForgeSubscribe
 	@EventHandler
