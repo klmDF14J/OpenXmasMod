@@ -60,13 +60,26 @@ public class OpenXmasModCore {
 		BiomeGenBase.desert.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
 		BiomeGenBase.extremeHills.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
 		BiomeGenBase.forest.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
-		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
-		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
-		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
-		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
-		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
-		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
-		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.swampland.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.river.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.sky.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.frozenOcean.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.frozenRiver.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.icePlains.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.iceMountains.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.mushroomIsland.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.mushroomIslandShore.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.desertHills.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.forestHills.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.taigaHills.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.extremeHillsEdge.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.jungle.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+		BiomeGenBase.jungleHills.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+
+		
+		
+		
+		
 
 	//	XmasLog.info("Starting OpenXmasMod verison " + OpenXmasModCore.VERSION);
 
