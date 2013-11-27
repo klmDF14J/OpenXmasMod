@@ -1,5 +1,7 @@
 package OpenXmasMod.common;
 
+import java.util.logging.Logger;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -38,7 +40,8 @@ public class OpenXmasModCore {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 
-		FMLLog.info("[OpenXmasMod]	Starting OpenXmasMod verison " + OpenXmasModCore.VERSION);
+		Logger log = Logger.getLogger("OpenXmasMod");
+		log.setParent(FMLLog.getLogger());
 
 	}
 
