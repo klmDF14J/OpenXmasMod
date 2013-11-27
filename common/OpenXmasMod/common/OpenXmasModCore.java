@@ -2,13 +2,13 @@ package OpenXmasMod.common;
 
 import java.util.logging.Logger;
 
-
+import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.creativetab.CreativeTabs;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
@@ -31,8 +31,6 @@ public class OpenXmasModCore {
 	public static final String VERSION = "1.6.4_V0.0.1_";
 	public static final String STATE = "DEV";
 	
-	
-
 	@Instance("OpenXmasMod")
 	public static OpenXmasModCore instance;
 
@@ -76,12 +74,6 @@ public class OpenXmasModCore {
 		BiomeGenBase.jungle.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
 		BiomeGenBase.jungleHills.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
 
-		
-		
-		
-		
-
-	//	XmasLog.info("Starting OpenXmasMod verison " + OpenXmasModCore.VERSION);
 
 	}
 
