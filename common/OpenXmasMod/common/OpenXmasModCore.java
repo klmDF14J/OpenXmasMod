@@ -2,7 +2,11 @@ package OpenXmasMod.common;
 
 import java.util.logging.Logger;
 
+
 import net.minecraft.creativetab.CreativeTabs;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -44,9 +48,11 @@ public class OpenXmasModCore {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 
+
 		MinecraftForge.EVENT_BUS.register(new SoundEvent());
 		Logger log = Logger.getLogger("OpenXmasMod");
 		log.setParent(FMLLog.getLogger());
+
 
 		BiomeGenBase.beach.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
 		BiomeGenBase.ocean.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
@@ -61,6 +67,9 @@ public class OpenXmasModCore {
 		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
 		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
 		BiomeGenBase.taiga.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+
+	//	XmasLog.info("Starting OpenXmasMod verison " + OpenXmasModCore.VERSION);
+
 	}
 
 	@EventHandler
