@@ -2,7 +2,14 @@ package OpenXmasMod.common;
 
 import java.util.logging.Logger;
 
+<<<<<<< HEAD:common/OpenXmasMod/common/OpenXmasModCore.java
 import net.minecraft.creativetab.CreativeTabs;
+=======
+import OpenXmasMod.common.util.XmasLog;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+>>>>>>> ceb2ea63dae8b841752914c0fd756387950cd425:src/OpenXmasMod/common/OpenXmasModCore.java
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
@@ -42,11 +49,15 @@ public class OpenXmasModCore {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+<<<<<<< HEAD:common/OpenXmasMod/common/OpenXmasModCore.java
 
 		MinecraftForge.EVENT_BUS.register(new SoundEvent());
 		Logger log = Logger.getLogger("OpenXmasMod");
 		log.setParent(FMLLog.getLogger());
 
+=======
+		XmasLog.info("Starting OpenXmasMod verison " + OpenXmasModCore.VERSION);
+>>>>>>> ceb2ea63dae8b841752914c0fd756387950cd425:src/OpenXmasMod/common/OpenXmasModCore.java
 	}
 
 	@EventHandler
