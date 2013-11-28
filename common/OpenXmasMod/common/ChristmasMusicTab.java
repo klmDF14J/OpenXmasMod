@@ -1,6 +1,7 @@
 package OpenXmasMod.common;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class ChristmasMusicTab extends CreativeTabs
@@ -14,6 +15,6 @@ public class ChristmasMusicTab extends CreativeTabs
 	
 	public ItemStack getIconItemStack()
 	{
-		return new ItemStack(OpenXmasModCore.allIWantForXmasMusicDisk);
+		return new ItemStack(Item.snowball);
 	}
 }

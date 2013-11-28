@@ -12,6 +12,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
+import OpenXmasMod.common.config.Config;
 import OpenXmasMod.common.item.ItemXmasRecord;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
@@ -38,8 +39,7 @@ public class OpenXmasModCore {
 	public static CommonProxy CommonProxy;
 	public static OpenXmasMod.client.ClientProxy ClientProxy;
 
-	public static Item allIWantForXmasMusicDisk;
-	public static Item jingleBells;
+	//public static Item allIWantForXmasMusicDisk, jingleBells;
 	
 	public static CreativeTabs musicTab = new ChristmasMusicTab(CreativeTabs.getNextID(), "openXmasMusic");
 
@@ -56,18 +56,17 @@ public class OpenXmasModCore {
 				biome.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
 			}
 		}
+		
+		Config.init(event.getSuggestedConfigurationFile());
 	}
 
 	@EventHandler
-	public void init(FMLInitializationEvent event)
-	{
-		allIWantForXmasMusicDisk = new ItemXmasRecord(800, "openxmas:AllIWant", "Mariah Carey", "All I Want For Christmas Is You")
-		.setUnlocalizedName("openxmas.allIWantDisk");
+	public void init(FMLInitializationEvent event) {
+		/*allIWantForXmasMusicDisk = new ItemXmasRecord(Config.allIWant, "openxmas:AllIWant", "Mariah Carey", "All I Want For Christmas Is You").setUnlocalizedName("openxmas.allIWantDisk");
 		LanguageRegistry.addName(allIWantForXmasMusicDisk, "OpenXMas Disk");
 
-		jingleBells = new ItemXmasRecord(801, "openxmas:JingleBells", "Basshunter", "Jingle Bells")
-		.setUnlocalizedName("openxmas.jingleBellsDisk");
-		LanguageRegistry.addName(jingleBells, "OpenXMas Disk");
+		jingleBells = new ItemXmasRecord(Config.jingleBells, "openxmas:JingleBells", "Basshunter", "Jingle Bells").setUnlocalizedName("openxmas.jingleBellsDisk");
+		LanguageRegistry.addName(jingleBells, "OpenXMas Disk");*/
 		
 		LanguageRegistry.instance().addStringLocalization("itemGroup.openXmasMusic", "Open Xmas Music");
 	}
