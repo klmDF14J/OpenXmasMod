@@ -6,8 +6,8 @@ import net.minecraft.item.ItemRecord;
 
 public class ItemXmasRecord extends ItemRecord
 {
-	public String creator = "Null";
-	public String record = "Null";
+	public String creator;
+	public String record;
 	
 	public ItemXmasRecord(int id, String music, String creatorArg, String recordArg)
 	{
