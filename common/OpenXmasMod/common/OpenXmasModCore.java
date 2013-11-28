@@ -52,7 +52,9 @@ public class OpenXmasModCore {
 		log.setParent(FMLLog.getLogger());
 		
 		for(BiomeGenBase biome : BiomeGenBase.biomeList) {
-			biome.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+			if(biome != null) {
+				biome.setDisableRain().setEnableSnow().setTemperatureRainfall(-1.0F, -0.5F);
+			}
 		}
 	}
 
