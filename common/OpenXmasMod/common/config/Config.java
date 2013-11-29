@@ -8,10 +8,14 @@ public class Config {
 	
 	public static Configuration config;
 	
+	public static int present;
+	
 	public static void init(File location) {
 		config = new Configuration(location);
 		
 		config.load();
+		
+		present = getValue("Present", 1000, false);
 		
 		config.save();
 	}

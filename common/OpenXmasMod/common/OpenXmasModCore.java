@@ -8,10 +8,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
+import OpenXmasMod.common.block.BlockPresent;
 import OpenXmasMod.common.config.Config;
 import OpenXmasMod.common.item.ItemXmasRecord;
 import cpw.mods.fml.common.FMLLog;
@@ -23,6 +25,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = "OpenXmasMod ", name = "OpenXmasMod", version = OpenXmasModCore .VERSION + OpenXmasModCore .STATE)
@@ -41,7 +44,10 @@ public class OpenXmasModCore {
 
 	//public static Item allIWantForXmasMusicDisk, jingleBells;
 	
-	public static CreativeTabs musicTab = new ChristmasMusicTab(CreativeTabs.getNextID(), "openXmasMusic");
+	public static Block present;
+	
+	public static CreativeTabs musicTab;
+	public static CreativeTabs blocksTab;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -68,7 +74,18 @@ public class OpenXmasModCore {
 		jingleBells = new ItemXmasRecord(Config.jingleBells, "openxmas:JingleBells", "Basshunter", "Jingle Bells").setUnlocalizedName("openxmas.jingleBellsDisk");
 		LanguageRegistry.addName(jingleBells, "OpenXMas Disk");*/
 		
+		musicTab = new ChristmasMusicTab(CreativeTabs.getNextID(), "openXmasMusic", Item.snowball.itemID);
+		blocksTab = new ChristmasMusicTab(CreativeTabs.getNextID(), "openXmasBlocks", Config.present);
+		
+		present = new BlockPresent(Config.present);
+		GameRegistry.registerBlock(present, ItemBlockPresent.class, "present");
+		
+		for(int i = 0; i < BlockPresent.types.length; i++) {
+			LanguageRegistry.addName(new ItemStack(present, 1, i), BlockPresent.types[i] + " Christmas Present");
+		}
+		
 		LanguageRegistry.instance().addStringLocalization("itemGroup.openXmasMusic", "Open Xmas Music");
+		LanguageRegistry.instance().addStringLocalization("itemGroup.openXmasBlocks", "Open Xmas Blocks");
 	}
 
 
